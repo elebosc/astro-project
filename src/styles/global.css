@@ -88,6 +88,10 @@ html.dark {
   background-color: rgb(209, 125, 167);
 }
 
+.dark .skill {
+  color: aqua;
+}
+
 @media screen and (min-width: 636px) {
 
   .nav-links {

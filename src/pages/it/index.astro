@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Greeting from '../../components/Greeting';
+import { getLangFromUrl } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url)
+---
+<BaseLayout pageTitle={"Home"}>
+  <h2>Il sottotitolo per il mio fantastico sito</h2>
+  <Greeting client:load messages={[lang, "Ciao", "Salve"]} />
+</BaseLayout>
