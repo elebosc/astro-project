@@ -7,6 +7,6 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 <BaseLayout pageTitle={"Home"}>
-  <h2>My awesome blog subtitle</h2>
+  <h2 class="fw-bold mb-3">My awesome blog subtitle</h2>
   <Greeting client:load messages={[lang, "Hi", "Hello", "Hey there"]} />
 </BaseLayout>

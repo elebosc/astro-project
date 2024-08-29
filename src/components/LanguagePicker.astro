@@ -1,7 +1,7 @@
 ---
 import { languages } from '../i18n/strings';
 ---
-<ul>
+<ul class="col-2 list-unstyled mb-0">
   {Object.entries(languages).map(([lang, label]) => (
     <li>
       <a href={`/${lang}/`}>{label}</a>

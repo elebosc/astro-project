@@ -3,9 +3,17 @@ import { getLangFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
-<div class="nav-links">
-    <a href=`/${lang}/`>{t('nav.home')}</a>
-    <a href=`/${lang}/about/`>{t('nav.about')}</a>
-    <a href=`/${lang}/blog/`>{t('nav.blog')}</a>
-    <a href=`/${lang}/tags/`>{t('nav.tags')}</a>
+<div class="row row-cols-auto justify-content-center nav-links mt-3">
+    <div class="col text-center mx-md-4">
+        <a class="text-uppercase fw-bold text-primary text-decoration-none h4" href=`/${lang}/`>{t('nav.home')}</a>
+    </div>
+    <div class="col text-center mx-md-4">
+        <a class="text-uppercase fw-bold text-primary text-decoration-none h4" href=`/${lang}/about/`>{t('nav.about')}</a>
+    </div>
+    <div class="col text-center mx-md-4">
+        <a class="text-uppercase fw-bold text-primary text-decoration-none h4" href=`/${lang}/blog/`>{t('nav.blog')}</a>
+    </div>
+    <div class="col text-center mx-md-4">
+        <a class="text-uppercase fw-bold text-primary text-decoration-none h4" href=`/${lang}/tags/`>{t('nav.tags')}</a>
+    </div>
 </div>

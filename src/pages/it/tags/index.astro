@@ -5,7 +5,7 @@ const allPosts = await Astro.glob("../posts/*.md");
 const uniqueTags = [...new Set(allPosts.flatMap((post) => post.frontmatter.tags))]
 ---
 
-<style>
+<!-- <style>
     a {
         color: #00539F;
     }
@@ -23,7 +23,7 @@ const uniqueTags = [...new Set(allPosts.flatMap((post) => post.frontmatter.tags)
         font-size: 1.15em;
         background-color: #F8FCFD;
     }
-</style>
+</style> -->
 
 <BaseLayout pageTitle={"Indice dei tag"}>
     <div class="tags">
