@@ -20,7 +20,7 @@ const formattedPubDate = (new Date(frontmatter.pubDate)).toISOString().split('T'
 
     <div class="row row-cols-auto pt-2 ps-2">
         {frontmatter.tags.map((tag) => 
-            <p class="col border border-dark rounded px-3 py-2 mx-1"><a class="text-decoration-none" href={tag}>{tag}</a></p>
+            <p class="col border rounded px-3 py-2 mx-1"><a class="text-decoration-none" href={tag}>{tag}</a></p>
         )}
     </div>
 

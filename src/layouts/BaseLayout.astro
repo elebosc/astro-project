@@ -37,6 +37,32 @@ const { pageTitle } = Astro.props;
 			</script>
 
 		</div>
+
+		<script is:inline>
+
+			function getTheme() {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				    return 'dark';
+				} else {
+					return 'light';
+				}
+			}
+
+			const initialTheme = getTheme()
+			const sunIcon = document.querySelectorAll(".sun")[0]
+        	const moonIcon = document.querySelectorAll(".moon")[0]
+			document.documentElement.setAttribute("data-bs-theme", initialTheme)
+			if (initialTheme === 'light') {
+				sunIcon.style.fill = "white"
+            	moonIcon.style.fill = "transparent"
+			} else if (initialTheme === 'dark') {
+				sunIcon.style.fill = "transparent"
+            	moonIcon.style.fill = "white"
+			}
+		
+		</script>
 		
 	</body>
 </html>
