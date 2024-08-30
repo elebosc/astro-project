@@ -6,6 +6,6 @@ import { getLangFromUrl } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url)
 ---
 <BaseLayout pageTitle={"Home"}>
-  <h2>Il sottotitolo per il mio fantastico sito</h2>
+  <h2 class="fw-bold mb-3">Il sottotitolo per il mio fantastico sito</h2>
   <Greeting client:load messages={[lang, "Ciao", "Salve"]} />
 </BaseLayout>
