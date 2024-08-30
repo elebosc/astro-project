@@ -9,38 +9,18 @@ const { frontmatter } = Astro.props;
 const formattedPubDate = (new Date(frontmatter.pubDate)).toISOString().split('T')[0]
 ---
 
-<!-- <style>
-    a {
-        color: #00539F;
-    }
-    
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-    .tag {
-        margin: 0.25em;
-        border: dotted 1px #a1a1a1;
-        border-radius: .5em;
-        padding: .5em 1em;
-        font-size: 1.15em;
-        background-color: #F8FCFD;
-    }
-</style> -->
-
 <BaseLayout pageTitle={frontmatter.title}>
 
     <p><em>{frontmatter.description}</em></p>
     <p>{t('written_by')} {frontmatter.author}</p>
     <p>{t('published_on')}: {formattedPubDate}</p>
-    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <img class="mb-3" src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
 
     <slot />
 
-    <div class="row row-cols-auto pt-2">
-        {frontmatter.tags.map((tag) =>
-            <p class="border rounded px-3 py-2 mx-1"><a class="text-decoration-none" href={`../tags/${tag}`}>{tag}</a></p>
+    <div class="row row-cols-auto pt-2 ps-2">
+        {frontmatter.tags.map((tag) => 
+            <p class="col border border-dark rounded px-3 py-2 mx-1"><a class="text-decoration-none" href={tag}>{tag}</a></p>
         )}
     </div>
 

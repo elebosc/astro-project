@@ -5,30 +5,10 @@ const allPosts = await Astro.glob("../posts/*.md");
 const uniqueTags = [...new Set(allPosts.flatMap((post) => post.frontmatter.tags))]
 ---
 
-<!-- <style>
-    a {
-        color: #00539F;
-    }
-    
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-    .tag {
-        margin: 0.25em;
-        border: dotted 1px #a1a1a1;
-        border-radius: .5em;
-        padding: .5em 1em;
-        font-size: 1.15em;
-        background-color: #F8FCFD;
-    }
-</style> -->
-
 <BaseLayout pageTitle={"Tag Index"}>
-    <div class="row row-cols-auto">
+    <div class="row row-cols-auto pt-2 ps-2">
         {uniqueTags.map((tag) => 
-            <p class="border rounded px-3 py-2 mx-1"><a class="text-decoration-none" href={tag}>{tag}</a></p>
+            <p class="col border border-dark rounded px-3 py-2 mx-1"><a class="text-decoration-none" href={tag}>{tag}</a></p>
         )}
     </div>
 </BaseLayout>
