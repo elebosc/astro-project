@@ -2,7 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { getLangFromUrl } from '../i18n/utils';
-import '../styles/global.css';
+import '../styles/globals.css';
 
 const lang = getLangFromUrl(Astro.url)
 const { pageTitle } = Astro.props;
@@ -16,14 +16,40 @@ const { pageTitle } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{ pageTitle }</title>
 	</head>
-	<body>
+	<style is:global>
+
+		h1 {
+			@apply text-2xl;
+			@apply text-primary;
+			@apply font-bold;
+			@apply pt-4;
+		}
+
+		h2 {
+			@apply text-xl;
+			@apply font-bold;
+			@apply pb-3;
+		}
+
+		h3 {
+			@apply text-lg;
+		}
+
+		ul {
+			@apply list-disc;
+			@apply ml-10
+		}
+
+	</style>
+	<body class="text-base">
 
 		<Header/>
 
-		<h1>{ pageTitle }</h1>
-
-        <slot/>
-
+		<div id="main-content" class="pl-7">
+			<h1>{ pageTitle }</h1>
+			<slot/>
+		</div>
+		
 		<Footer/>
 
 		<script>

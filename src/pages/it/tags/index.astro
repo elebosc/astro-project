@@ -5,28 +5,12 @@ const allPosts = await Astro.glob("../posts/*.md");
 const uniqueTags = [...new Set(allPosts.flatMap((post) => post.frontmatter.tags))]
 ---
 
-<style>
-    a {
-        color: #00539F;
-    }
-    
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-    .tag {
-        margin: 0.25em;
-        border: dotted 1px #a1a1a1;
-        border-radius: .5em;
-        padding: .5em 1em;
-        font-size: 1.15em;
-        background-color: #F8FCFD;
-    }
-</style>
-
 <BaseLayout pageTitle={"Indice dei tag"}>
-    <div class="tags">
-        {uniqueTags.map((tag) => <p class="tag"><a href={tag}>{tag}</a></p>)}
+    <div class="flex flex-wrap space-x-2 my-5   ">
+        {uniqueTags.map((tag) => 
+            <p class="border border-gray-500 rounded-xl px-4 py-2">
+                <a class="text-primary" href={tag}>{tag}</a>
+            </p>
+        )}
     </div>
 </BaseLayout>

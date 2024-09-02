@@ -11,8 +11,8 @@ export default function Greeting({messages}) {
 
   return (
     <div>
-      <h3>{greeting}! {t('thanks')}</h3>
-      <button onClick={() => setGreeting(randomMessage())}>
+      <h3 class="text-lg mb-4">{greeting}! {t('thanks')}</h3>
+      <button class="bg-gray-200 border border-black rounded-md px-3 py-1" onClick={() => setGreeting(randomMessage())}>
         {t('new_greeting')}
       </button>
     </div>
