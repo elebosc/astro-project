@@ -4,15 +4,15 @@ import ThemeIcon from "./ThemeIcon.astro";
 import LanguagePicker from "./LanguagePicker.astro";
 ---
 
-<nav class="bg-primary">
+<nav id="navbar" class="bg-primary">
 
   <div class="w-3/4">
     <div class="relative flex h-20 items-center justify-between">
 
-      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+      <div class="absolute inset-y-0 left-4 flex items-center sm:hidden">
 
         <!-- Mobile menu button-->
-        <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+        <button id="mobile-menu-btn" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Open main menu</span>
           <!--
@@ -43,20 +43,19 @@ import LanguagePicker from "./LanguagePicker.astro";
       </div>
 
       <!-- Other navbar options -->
-      <div class=" flex flex-1 absolute inset-y-0 right-0 items-center justify-end pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+      <div class="flex flex-1 absolute inset-y-0 right-0 items-center justify-end pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
         <ThemeIcon/>
-        <LanguagePicker/>
+        <LanguagePicker client:load/>
       </div>
 
     </div>
   </div>
 
   <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="sm:hidden" id="mobile-menu">
+  <div class="hidden" id="mobile-menu">
     <div class="space-y-1 px-2 pb-3 pt-2">
       <Navigation/>
     </div>
   </div>
 
 </nav>
-  

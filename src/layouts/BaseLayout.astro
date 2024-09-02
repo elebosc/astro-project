@@ -28,7 +28,7 @@ const { pageTitle } = Astro.props;
 		h2 {
 			@apply text-xl;
 			@apply font-bold;
-			@apply pb-3;
+			@apply py-3;
 		}
 
 		h3 {
@@ -43,9 +43,9 @@ const { pageTitle } = Astro.props;
 	</style>
 	<body class="text-base">
 
-		<Header/>
+		<Header client:load/>
 
-		<div id="main-content" class="pl-7">
+		<div id="main-content" class="px-7">
 			<h1>{ pageTitle }</h1>
 			<slot/>
 		</div>
@@ -53,7 +53,7 @@ const { pageTitle } = Astro.props;
 		<Footer/>
 
 		<script>
-			import "../scripts/menu.js"
+			import "../scripts/navbar.js";
 		</script>
 		
 	</body>

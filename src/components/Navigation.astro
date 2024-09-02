@@ -1,18 +1,22 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, getSectionFromUrl, useTranslations } from '../i18n/utils';
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
+
+function highlightIfActive(section) {
+    return (section == getSectionFromUrl(Astro.url)) ? "bg-secondaryOnNav" : "";
+}
 ---
 
-<a href=`/${lang}/` class="rounded-md bg-secondaryOnNav px-3 py-2 text-base font-medium text-secondaryText" aria-current="page">
+<a href=`/${lang}/` class={"block rounded-md px-3 py-2 text-base font-medium text-secondaryText hover:bg-hoverOnNav hover:secondaryText " + `${highlightIfActive("")}`}>
     {t('nav.home')}
 </a>
-<a href=`/${lang}/about/` class="rounded-md px-3 py-2 text-base font-medium text-secondaryText hover:bg-hoverOnNav hover:secondaryText">
+<a href=`/${lang}/about/` class={"block rounded-md px-3 py-2 text-base font-medium text-secondaryText hover:bg-hoverOnNav hover:secondaryText " + `${highlightIfActive("about")}`}>
     {t('nav.about')}
 </a>
-<a href=`/${lang}/blog/` class="rounded-md px-3 py-2 text-base font-medium text-secondaryText hover:bg-hoverOnNav hover:secondaryText">
+<a href=`/${lang}/blog/` class={"block rounded-md px-3 py-2 text-base font-medium text-secondaryText hover:bg-hoverOnNav hover:secondaryText " + `${highlightIfActive("blog")}`}>
     {t('nav.blog')}
 </a>
-<a href=`/${lang}/tags/` class="rounded-md px-3 py-2 text-base font-medium text-secondaryText hover:bg-hoverOnNav hover:secondaryText">
+<a href=`/${lang}/tags/` class={"block rounded-md px-3 py-2 text-base font-medium text-secondaryText hover:bg-hoverOnNav hover:secondaryText " + `${highlightIfActive("tags")}`}>
     {t('nav.tags')}
 </a>
