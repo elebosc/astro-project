@@ -3,5 +3,28 @@
 @tailwind utilities;
 
 @layer base {
+
+    h1 {
+        @apply text-2xl;
+        @apply text-primary;
+        @apply dark:text-primaryDark;
+        @apply font-bold;
+        @apply pt-4;
+    }
+
+    h2 {
+        @apply text-xl;
+        @apply font-bold;
+        @apply py-3;
+    }
+
+    h3 {
+        @apply text-lg;
+    }
+
+    ul {
+        @apply list-disc;
+        @apply ml-10
+    }
     
 }

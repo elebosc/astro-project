@@ -6,7 +6,7 @@ const uniqueTags = [...new Set(allPosts.flatMap((post) => post.frontmatter.tags)
 ---
 
 <BaseLayout pageTitle={"Tag Index"}>
-    <div class="flex flex-wrap space-x-2 my-5">
+    <div class="flex flex-wrap space-x-2 space-y-2 my-5">
         {uniqueTags.map((tag) => 
             <p class="border border-gray-500 rounded-xl px-4 py-2">
                 <a class="text-primary dark:text-primaryDark" href={tag}>{tag}</a>
