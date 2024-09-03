@@ -12,7 +12,7 @@ export default function Greeting({messages}) {
   return (
     <div>
       <h3 class="text-lg mb-4">{greeting}! {t('thanks')}</h3>
-      <button class="bg-gray-200 border border-black rounded-md px-3 py-1" onClick={() => setGreeting(randomMessage())}>
+      <button class="bg-gray-200 dark:text-black border border-black rounded-md px-3 py-1" onClick={() => setGreeting(randomMessage())}>
         {t('new_greeting')}
       </button>
     </div>

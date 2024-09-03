@@ -7,7 +7,10 @@ export default {
 				primary: '#86198f',
 				secondaryOnNav: '#4a044e',
 				hoverOnNav: '#374151',
-				secondaryText: 'white'
+				secondaryText: 'white',
+				bgDark: '#0a0a0a',
+				primaryDark: '#CA26CC',
+				primaryTextDark: 'white'
 			},
 			fontSize: {
 				sm: '1rem',
@@ -19,4 +22,5 @@ export default {
 		},
 	},
 	plugins: [],
+	darkMode: 'class'
 }
